@@ -1,6 +1,17 @@
 version: '3'
 services:
+  # 開発環境用
   app:
     build: .
+    # コンテナは処理が終わると停止するので、停止しないようにします。
+    tty: true
+    # 開発環境のWebサーバーはポート8080番につなげる。
     ports:
       - "8080:8080"
+    # 共有ディレクトリをここに記載します。
+    volumes:
+      - ./app:/go/src/app:cached
+    working_dir: /go/src/app/chat
+    # コンテナ内の時間を日本時間にします
+    environment:
+      TZ: Asia/Tokyo

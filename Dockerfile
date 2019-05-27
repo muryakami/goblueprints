@@ -1,6 +1,8 @@
+# イメージ名　as ステージ名
 FROM golang:latest
 
-WORKDIR /go
-ADD . /go
+# websocket パッケージ
+RUN go get github.com/gorilla/websocket
 
-CMD ["go", "run", "main.go"]
+# 起動時に実行
+CMD ["sh"]
