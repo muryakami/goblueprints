@@ -8,6 +8,7 @@ services:
     # 開発環境のWebサーバーはポート8080番につなげる。
     ports:
       - "8080:8080"
+      - "3000:3000"
     # 共有ディレクトリをここに記載します。
     volumes:
       - ./app:/go/src/app:cached
