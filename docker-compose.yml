@@ -12,7 +12,7 @@ services:
     # 共有ディレクトリをここに記載します。
     volumes:
       - ./app:/go/src/app:cached
-    working_dir: /go/src/app/chat
+    working_dir: /go/src/app
     # コンテナ内の時間を日本時間にします
     environment:
       TZ: Asia/Tokyo
